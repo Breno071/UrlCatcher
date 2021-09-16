@@ -11,13 +11,13 @@ public class Main {
         System.out.println("Bem vindo ao UrlCatcher!");
         System.out.println("--------------------------");
         Thread.sleep(2000);
-        System.out.println("Digite uma url válida");
+        System.out.println("Digite uma url valida");
         Scanner input = new Scanner(System.in);
         String userIn = input.nextLine();
         input.close();
-        /*http://pudim.com.br/*/
+
         URL url;
-        File file = new File("pagina.html");
+        File file = new File("page.html");
 
         try {
             url = new URL(userIn);

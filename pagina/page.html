@@ -1,0 +1,1947 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<script src="/cdn-cgi/apps/head/OqHJ3IFUVhsYx-6r7jn3YmELAFM.js"></script><style>
+	.grecaptcha-badge{
+					visibility: collapse !important;
+	}
+	</style>
+<meta name="google-site-verification" content="KhjEOl3uyftknX8r3vDAjFb7_2mt2_VXSZfZyhtyJd4" />
+<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1314945340",accountID:"3266903",trustKey:"1628470",xpid:"VwQBV19TCxABV1BWDgUCV1UD",licenseKey:"NRJS-bdf6bf1731e33c991a4",applicationID:"1314945112"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(29),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(30),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),c.xhrWrappable&&t(14),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){L++,C=g.hash,this[u]=y.now()}function o(){L--,g.hash!==C&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),S=t(7),N=t(14),M=t(9),P=t("ee"),T=P.get("tracer");t(16),y.features.spa=!0;var C,L=0;P.on(u,r),b.on(p,r),M.on(p,r),P.on(d,o),b.on(l,o),M.on(l,o),P.buffer([u,d,"xhr-done","xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),N.buffer([u,"new-xhr","send-xhr"+s]),S.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),T.buffer([u,"no-"+u]),M.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(N,"send-xhr"+s),a(P,"xhr-resolved"),a(P,"xhr-done"),a(S,m+s),a(S,m+"-done"),a(M,"new-jsonp"),a(M,"jsonp-end"),a(M,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),s=t(12),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");if(!y.disabled){y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(30),a=t(29);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){c.emit("jsonp-error",[],p),c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=s(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),c.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t("ee").get("jsonp"),f=t("wrap-function")(c);if(e.exports=c,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?f.inPlace(Node.prototype,l,"dom-"):(f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-")),c.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(29),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(26),h=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime]))}}function o(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(17),f=t(15).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(22),m=t(21),v=t(18),w=NREUM.o.REQ,g=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof g&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;"string"==typeof i?n=i:"object"==typeof i&&i instanceof w?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n);var s=(""+(i&&i instanceof w&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}),u.on("fetch-done",function(t,e){this.params||(this.params={}),this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime])})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(21);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(29),s=t(30),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],20:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],21:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],22:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],23:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(31);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],24:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!v){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),v=!0,d("timing",["fi",e,n])}}function s(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,f,u,d=t("handle"),p=t("loader"),l=t(28),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(o);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(i);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,!1)})}l(s)}},{}],26:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],27:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],28:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[o]?"hidden":"visible")}"addEventListener"in document&&i&&document.addEventListener(i,e,!1)}e.exports=r;var o,i,a;"undefined"!=typeof document.hidden?(o="hidden",i="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",i="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",i="webkitvisibilitychange",a="webkitVisibilityState")},{}],29:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],30:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],31:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(29),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!S++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(23),s=t("handle"),c=t(29),f=t("ee"),u=t(27),d=t(24),p=t(20),l=p.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!d(h.location);NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1210.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(19),t(25),m[v]?(m[v]("DOMContentLoaded",i,!1),h[v]("load",r,!1)):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var S=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(30),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,16,5,3,4]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="apple-touch-icon" sizes="57x57" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-57x57.png?v=xQQlkMx9YN">
+<link rel="apple-touch-icon" sizes="60x60" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-60x60.png?v=xQQlkMx9YN">
+<link rel="apple-touch-icon" sizes="72x72" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-72x72.png?v=xQQlkMx9YN">
+<link rel="apple-touch-icon" sizes="76x76" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-76x76.png?v=xQQlkMx9YN">
+<link rel="apple-touch-icon" sizes="114x114" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-114x114.png?v=xQQlkMx9YN">
+<link rel="apple-touch-icon" sizes="120x120" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-120x120.png?v=xQQlkMx9YN">
+<link rel="apple-touch-icon" sizes="144x144" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-144x144.png?v=xQQlkMx9YN">
+<link rel="apple-touch-icon" sizes="152x152" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-152x152.png?v=xQQlkMx9YN">
+<link rel="apple-touch-icon" sizes="180x180" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/apple-touch-icon-180x180.png?v=xQQlkMx9YN">
+<link rel="icon" type="image/png" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/favicon-32x32.png?v=xQQlkMx9YN" sizes="32x32">
+<link rel="icon" type="image/png" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/favicon-194x194.png?v=xQQlkMx9YN" sizes="194x194">
+<link rel="icon" type="image/png" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/favicon-96x96.png?v=xQQlkMx9YN" sizes="96x96">
+<link rel="icon" type="image/png" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/android-chrome-192x192.png?v=xQQlkMx9YN" sizes="192x192">
+<link rel="icon" type="image/png" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/favicon-16x16.png?v=xQQlkMx9YN" sizes="16x16">
+<link rel="manifest" href="https://jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/manifest.json?v=xQQlkMx9YN">
+<link rel="mask-icon" href="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/safari-pinned-tab.svg?v=xQQlkMx9YN" color="#3CB4B4">
+<link rel="shortcut icon" href="https://jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/favicons/favicon.ico?v=xQQlkMx9YN">
+<meta name="turbolinks-cache-control" content="no-cache">
+<meta property="fb:pages" content="193810163083" />
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+	window.googletag = window.googletag || {cmd: []};
+	</script>
+<title>NerdCast - Jovem Nerd</title>
+
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://jovemnerd.com.br/nerdcast/" />
+<link rel="next" href="https://jovemnerd.com.br/nerdcast/page/2/" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="NerdCast - Jovem Nerd" />
+<meta property="og:description" content="O Nerdcast completou 10 anos em 2016 com 1 milhão de downloads por episódio e como primeiro lugar de audiência em podcasts no Brasil. Os assuntos são história, ciência, cinema, quadrinhos, literatura, tecnologia, games, RPG… Tudo que um nerd gosta! A conversa é informal, divertida, escrachada e tão doida quanto séria. Quer dizer, tão séria quanto doida! Junte-se aos convidados de Alexandre “Jovem Nerd�? Ottoni e Deive “Azaghal�? Pazos e faça parte da roda das discussões mais nerds da internet. Toda sexta-feira  •  Duração média: 90 minutos" />
+<meta property="og:url" content="https://jovemnerd.com.br/nerdcast/" />
+<meta property="og:site_name" content="Jovem Nerd" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="O Nerdcast completou 10 anos em 2016 com 1 milhão de downloads por episódio e como primeiro lugar de audiência em podcasts no Brasil. Os assuntos são história, ciência, cinema, quadrinhos, literatura, tecnologia, games, RPG… Tudo que um nerd gosta! A conversa é informal, divertida, escrachada e tão doida quanto séria. Quer dizer, tão séria quanto doida! Junte-se aos convidados de Alexandre “Jovem Nerd�? Ottoni e Deive “Azaghal�? Pazos e faça parte da roda das discussões mais nerds da internet. Toda sexta-feira  •  Duração média: 90 minutos" />
+<meta name="twitter:title" content="NerdCast - Jovem Nerd" />
+<meta name="twitter:site" content="@jovemnerd" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://jovemnerd.com.br/#website","url":"https://jovemnerd.com.br/","name":"Jovem Nerd","potentialAction":{"@type":"SearchAction","target":"https://jovemnerd.com.br/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"CollectionPage","@id":"https://jovemnerd.com.br/nerdcast/#webpage","url":"https://jovemnerd.com.br/nerdcast/","inLanguage":"pt-BR","name":"NerdCast - Jovem Nerd","isPartOf":{"@id":"https://jovemnerd.com.br/#website"}}]}</script>
+
+<link rel='dns-prefetch' href='//uploads.jovemnerd.com.br' />
+<link rel="alternate" type="application/rss+xml" title="Feed para Jovem Nerd &raquo;" href="https://jovemnerd.com.br/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Jovem Nerd &raquo;" href="https://jovemnerd.com.br/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Feed de Jovem Nerd &raquo; Podcasts" href="https://jovemnerd.com.br/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://jovemnerd.com.br/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='photoswipe-styles-css' href='https://jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/js/vendor/photoswipe/photoswipe.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='tiny-slider-styles-css' href='https://jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/js/vendor/tiny-slider/tiny-slider.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='jovem-nerd-theme-style-css' href='https://jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/style.css?v=8.9.11' type='text/css' media='all' />
+<script type='text/javascript' src='https://jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/js/vendor/photoswipe/photoswipe.min.js?ver=1'></script>
+<script type='text/javascript' src='https://jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/js/vendor/tiny-slider/tiny-slider-2.9.2.min.js?ver=1'></script>
+<script type="text/javascript" src="https://jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/js/main.min.js?v=8.9.11" data-turbolinks-eval="false"></script><link rel='https://api.w.org/' href='https://jovemnerd.com.br/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://jovemnerd.com.br/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://jovemnerd.com.br/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.2.4" />
+<meta property="fb:pages" content="193810163083" />
+<script>
+		var getNightMode = localStorage.getItem('nightmode');
+		if(getNightMode) {
+			var nightmode = true;
+		} else {
+			var nightmode = false;
+		}
+	</script>
+</head>
+<body class="archive post-type-archive post-type-archive-podcast nightmode">
+<script>
+if(!nightmode) {
+	document.querySelector('body').classList.remove('nightmode');
+}
+</script>
+<input type="hidden" name="banner-start-date" value="2021-07-23 17:30:17">
+<input type="hidden" name="banner-end-date" value="2021-07-25 23:59:59">
+<input type="hidden" name="current-date" value="2021-09-16 16:54:35">
+<input type="hidden" name="banner-active" value="">
+<div id="page" class="site">
+<header id="masthead" class="header-menu">
+<div class="wrapper">
+<nav class="navigation-mobile">
+<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" onclick="toggleMenu(event)">
+<span class="-open">
+Menu <i>▼</i>
+</span>
+<span class="-close">
+Fechar
+</span>
+</button>
+<ul class="list">
+<li class="item has-submenu mobile" onclick="toggleMenu(event)">
+<a>Nerdbunker <i>▼</i></a>
+<ul class="list nerdbunker">
+<li class="item has-submenu product-bunker" onclick="this.classList.toggle('active')">
+<a>Direto do Bunker <i>▼</i></a>
+<ul class="list">
+<li class="item"><a href="/bunker/categoria/explicando">Explicando</a></li>
+<li class="item"><a href="/bunker/categoria/dicas-da-redacao">Dicas da redação</a></li>
+<li class="item"><a href="/bunker/categoria/entrevistas">Entrevistas</a></li>
+<li class="item"><a href="/bunker/categoria/criticas">Críticas</a></li>
+<li class="item"><a href="/bunker/categoria/reviews">Reviews</a></li>
+<li class="item"><a href="/bunker/categoria/agenda-nerd">Agenda Nerd</a></li>
+</ul>
+</li>
+<li class="item product-filmes"><a href="/bunker/categoria/filmes">Filmes</a></li>
+<li class="item product-games"><a href="/bunker/categoria/games">Games</a></li>
+<li class="item product-series-e-tv"><a href="/bunker/categoria/series-e-tv">Séries e TV</a></li>
+<li class="item product-animes-e-mangas"><a href="/bunker/categoria/animes-e-mangas">Animes e Mangás</a></li>
+<li class="item product-hqs-e-livros"><a href="/bunker/categoria/hqs-e-livros">HQs e Livros</a></li>
+<li class="item product-ciencia-e-tecnologia"><a href="/bunker/categoria/ciencia-e-tecnologia">Ciência e Tecnologia</a></li>
+<li class="item product-etc"><a href="/bunker/categoria/etc">Etc</a></li>
+<li class="item product-blogs-e-colunas"><a href="/blogs-e-colunas">Blogs e Colunas</a></li>
+</ul>
+</li>
+<li class="item">
+<a href="/nerdcast/">NerdCast</a>
+</li>
+<li class="item">
+<a href="/nerdoffice/">NerdOffice</a>
+</li>
+<li class="item">
+<a href="/nerdplayer/">NerdPlayer</a>
+</li>
+<li class="item has-submenu" onclick="toggleMenu(event)">
+<a>Mais <i>▼</i></a>
+<ul class="list">
+<li class="item"><a href="/sr-k">Sr. K</a></li>
+<li class="item"><a href="/nerdologia">Nerdologia</a></li>
+</ul>
+</li>
+<li class="item">
+<a href="https://nerdstore.com.br">Nerdstore</a>
+</li>
+<li class="item">
+<a href="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/Jovem-Nerd_MK.pdf">Anuncie</a>
+</li>
+</ul>
+<button class="night-mode-trigger">
+<i class="icon-lamp"></i>
+<span>modo escuro</span>
+</button>
+</nav>
+
+<div class="site-branding">
+<h1 itemprop="logo">
+<a href="/">Jovem Nerd</a>
+</h1>
+</div>
+
+<div class="search-block-mobile">
+<button class="search-trigger" id="modalSearchTrigger" aria-label="Search icon">
+<i class="icon-search"></i>
+</button>
+<form action="https://jovemnerd.com.br" class="search-form">
+<label>
+<input type="text" name="s" id="s" placeholder="Ex: NC 500" />
+</label>
+<button type="button" class="close-search-modal" id="modalSearchClose">
+Cancelar
+</button>
+<button type="submit">Buscar <i class="icon-search"></i></button>
+</form>
+</div>
+
+<nav class="navigation-desktop">
+<ul class="list">
+<li class="item has-submenu mobile" onclick="toggleMenu(event)">
+<a>Nerdbunker <i>▼</i></a>
+<ul class="list nerdbunker">
+<li class="item has-submenu product-bunker" onclick="this.classList.toggle('active')">
+<a>Direto do Bunker <i>▼</i></a>
+<ul class="list">
+<li class="item"><a href="/bunker/categoria/explicando">Explicando</a></li>
+<li class="item"><a href="/bunker/categoria/dicas-da-redacao">Dicas da redação</a></li>
+<li class="item"><a href="/bunker/categoria/entrevistas">Entrevistas</a></li>
+<li class="item"><a href="/bunker/categoria/criticas">Críticas</a></li>
+<li class="item"><a href="/bunker/categoria/reviews">Reviews</a></li>
+<li class="item"><a href="/bunker/categoria/agenda-nerd">Agenda Nerd</a></li>
+</ul>
+</li>
+<li class="item product-filmes"><a href="/bunker/categoria/filmes">Filmes</a></li>
+<li class="item product-games"><a href="/bunker/categoria/games">Games</a></li>
+<li class="item product-series-e-tv"><a href="/bunker/categoria/series-e-tv">Séries e TV</a></li>
+<li class="item product-animes-e-mangas"><a href="/bunker/categoria/animes-e-mangas">Animes e Mangás</a></li>
+<li class="item product-hqs-e-livros"><a href="/bunker/categoria/hqs-e-livros">HQs e Livros</a></li>
+<li class="item product-ciencia-e-tecnologia"><a href="/bunker/categoria/ciencia-e-tecnologia">Ciência e Tecnologia</a></li>
+<li class="item product-etc"><a href="/bunker/categoria/etc">Etc</a></li>
+<li class="item product-blogs-e-colunas"><a href="/blogs-e-colunas">Blogs e Colunas</a></li>
+</ul>
+</li>
+<li class="item">
+<a href="/nerdcast/">NerdCast</a>
+</li>
+<li class="item">
+<a href="/nerdoffice/">NerdOffice</a>
+</li>
+<li class="item">
+<a href="/nerdplayer/">NerdPlayer</a>
+</li>
+<li class="item has-submenu" onclick="toggleMenu(event)">
+<a>Mais <i>▼</i></a>
+<ul class="list">
+<li class="item"><a href="/sr-k">Sr. K</a></li>
+<li class="item"><a href="/nerdologia">Nerdologia</a></li>
+</ul>
+</li>
+<li class="item">
+<a href="https://nerdstore.com.br">Nerdstore</a>
+</li>
+<li class="item">
+<a href="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/Jovem-Nerd_MK.pdf">Anuncie</a>
+</li>
+</ul>
+<form action="https://jovemnerd.com.br" class="search-form">
+<label>
+<input type="text" name="s" id="s" placeholder="Ex: NC 500" />
+</label>
+<button type="button" class="close-search-modal" id="modalSearchClose">
+Cancelar
+</button>
+<button type="submit">Buscar <i class="icon-search"></i></button>
+</form>
+<button class="night-mode-trigger">
+<i class="icon-lamp"></i>
+<span>modo escuro</span>
+</button>
+</nav>
+
+</div>
+
+</header>
+
+<section class="sub-header">
+<div class="wrapper">
+<ul class="list">
+<li class="nerdbunker">
+<a class="desktop" href="/nerdbunker/">Nerdbunker <i>▼</i></a>
+<a class="mobile nerdbunker-trigger" onclick="toggleMenu(event)">Nerdbunker <i>▼</i></a>
+<ul class="submenu">
+<li class="item product-bunker has-submenu" onclick="toggleMenu(event)">
+<a class="desktop" href="/direto-do-bunker">
+Direto do Bunker
+</a>
+<a class="mobile">
+Direto do Bunker
+</a>
+<ul class="submenu">
+<li class="item"><a href="/bunker/categoria/explicando">Explicando</a></li>
+<li class="item"><a href="/bunker/categoria/dicas-da-redacao">Dicas da redação</a></li>
+<li class="item"><a href="/bunker/categoria/entrevistas">Entrevistas</a></li>
+<li class="item"><a href="/bunker/categoria/criticas">Críticas</a></li>
+<li class="item"><a href="/bunker/categoria/reviews">Reviews</a></li>
+<li class="item"><a href="/bunker/categoria/agenda-nerd">Agenda Nerd</a></li>
+</ul>
+</li>
+<li class="item product-filmes"><a href="/bunker/categoria/filmes">Filmes</a></li>
+<li class="item product-games"><a href="/bunker/categoria/games">Games</a></li>
+<li class="item product-series-e-tv"><a href="/bunker/categoria/series-e-tv">Séries e TV</a></li>
+<li class="item product-animes-e-mangas"><a href="/bunker/categoria/animes-e-mangas">Animes e Mangás</a></li>
+<li class="item product-hqs-e-livros"><a href="/bunker/categoria/hqs-e-livros">HQs e Livros</a></li>
+<li class="item product-ciencia-e-tecnologia"><a href="/bunker/categoria/ciencia-e-tecnologia">Ciência e Tecnologia</a></li>
+<li class="item product-etc"><a href="/bunker/categoria/etc">Etc</a></li>
+<li class="item product-blogs-e-colunas"><a href="/blogs-e-colunas">Blogs e Colunas</a></li>
+</ul>
+</li>
+<ul class="item-block">
+<li class="item">
+ <a href="/bunker/tag/god-of-war">
+God of War </a>
+</li>
+<li class="item">
+<a href="https://jovemnerd.com.br/nerdcast/la-do-bunker/depende-vamos-ver/">
+Lá do Bunker </a>
+</li>
+<li class="item">
+<a href="/bunker/tag/spacex">
+SpaceX </a>
+</li>
+<li class="item">
+<a href="https://jovemnerd.com.br/nerdbunker/teste-mostra-seu-alinhamento-de-rpg-na-vida-real/">
+RPG </a>
+</li>
+<li class="item">
+<a href="/bunker/tag/matrix">
+Matrix </a>
+</li>
+</ul>
+</ul>
+</div>
+</section>
+<div id="content" class="site-content ">
+<div id="primary" class="content-area">
+<main id="main" class="site-main archive-product-page">
+<div class="wrapper">
+<div class="ad -horizontal">
+<div id="Position_HomeTopSuper" style="margin-bottom: 1rem;">
+<div id='div-gpt-ad-41-399-header_super'></div>
+<script>
+  googletag.cmd.push(function() {
+
+		let mapping = googletag
+		.sizeMapping()
+		.addSize(
+			[1024, 0],
+			[
+				[728, 90],
+				[970, 90],
+				[970, 250],
+			]
+		)
+		.addSize(
+			[0, 0],
+			[
+				[300, 50],
+				[320, 50],
+				[320, 100]
+			]
+		)
+		.build();
+
+		let slot = googletag.defineSlot(
+			'/21803899378/jn_header_super',
+			[
+				[300, 50],
+				[320, 50],
+			],
+			'div-gpt-ad-41-399-header_super'
+		)
+		.defineSizeMapping(mapping)
+		.addService(googletag.pubads());
+
+		googletag.pubads().enableSingleRequest();
+    	googletag.enableServices();
+		googletag.display('div-gpt-ad-41-399-header_super');
+  });
+</script>
+</div>
+</div>
+</div>
+<div class="wrapper">
+<header class="header">
+<h2 class="page-title">
+NerdCast
+</h2>
+<form class="search-form -large">
+<label>
+<input type="text" name="s" id="s" placeholder="Pesquisar NerdCast..." />
+<input class="hidden" type="text" name="post_type" id="post_type" value="NerdCast" />
+</label>
+<button type="submit">Buscar <i class="icon-search"></i></button>
+</form>
+</header>
+</div>
+<section class="main-highlights wrapper">
+<h2 class="section-title -border">
+Últimos episódios
+</h2>
+<article class="item -medium -column">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/extra/adestrando-cachorro-quente-com-tik-tik-para-alienigenas-nerdcast-descontrolado-e-sem-pauta/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/NCextra_sem-pauta-4-760x428.png" alt="Adestrando cachorro-quente com Tik-Tik para alienígenas: Nerdcast Descontrolado e sem pauta">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/extra/adestrando-cachorro-quente-com-tik-tik-para-alienigenas-nerdcast-descontrolado-e-sem-pauta/">Extra Oferecido por BIS XTRA</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/extra/adestrando-cachorro-quente-com-tik-tik-para-alienigenas-nerdcast-descontrolado-e-sem-pauta/">
+Adestrando cachorro-quente com Tik-Tik para alienígenas: Nerdcast Descontrolado e sem pauta </a>
+</h2>
+<time class="postedon">
+1 hora e 3 minutos •
+14 de setembro de 2021 </time>
+</div>
+</article>
+<article class="item -medium -column">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/depende-vamos-ver/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/ldb-ep07-capa-site-760x428.jpg" alt="Depende, vamos ver">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/depende-vamos-ver/">Lá do Bunker 07</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/la-do-bunker/depende-vamos-ver/">
+Depende, vamos ver </a>
+</h2>
+<time class="postedon">
+48 minutos •
+13 de setembro de 2021 </time>
+</div>
+</article>
+<article class="item -medium -column">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/a-pressa-e-inimiga-do-parto-ideal/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/CDM_19_pressa_inimiga_parto_ideal_giga-760x428.jpg" alt="A pressa é inimiga do parto ideal">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/a-pressa-e-inimiga-do-parto-ideal/">Caneca de Mamicas 19</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/a-pressa-e-inimiga-do-parto-ideal/">
+A pressa é inimiga do parto ideal </a>
+</h2>
+<time class="postedon">
+1 hora e 7 minutos •
+11 de setembro de 2021 </time>
+</div>
+</article>
+<article class="item -medium -column">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/oh-canada-a-vida-la-no-norte-da-america/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/NC794_canada-760x428.png" alt="Oh Canada! A vida lá no norte da América">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/oh-canada-a-vida-la-no-norte-da-america/">NerdCast 794</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/oh-canada-a-vida-la-no-norte-da-america/">
+Oh Canada! A vida lá no norte da América </a>
+</h2>
+<time class="postedon">
+2 horas e 1 minutos •
+10 de setembro de 2021 </time>
+</div>
+</article>
+</section>
+<section class="wrapper row-block -medium space-bottom">
+<article class="card-post -column">
+<div class="image">
+<a href="https://jovemnerd.com.br/playlist/rpg-call-of-cthulhu/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/images/rpg-cthulhu.jpg" alt="RPG Cthulhu">
+</a>
+</div>
+<div class="info">
+<a href="https://jovemnerd.com.br/playlist/rpg-call-of-cthulhu/" class="cat-item product-nerdcast">2017 - 2020</a>
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/rpg-call-of-cthulhu/">
+Cthulhu
+</a>
+</h3>
+<p class="excerpt">
+Estamos em 1936 e uma confraria de amigos, veteranos da Primeira Guerra Mundial, se reúne mais uma vez só que dessa vez a confraternização tomou rumos inesperados e muito sinistros. (Arte da Vitrine: Marcelo Silva)
+</p>
+</div>
+</article>
+<article class="card-post -column">
+<div class="image">
+<a href="https://jovemnerd.com.br/playlist/rpg-cyberpunk/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/images/rpg-cyberpunk.jpg" alt="RPG Cyberpunk">
+</a>
+</div>
+<div class="info">
+<a href="https://jovemnerd.com.br/playlist/rpg-cyberpunk/" class="cat-item product-nerdcast">2013 - 2016</a>
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/rpg-cyberpunk/">
+Cyberpunk
+</a>
+</h3>
+<p class="excerpt">
+Conheça o grupo de mercenários mais esculhambados de Delta City, enquanto planejam um grande assalto que poderá ser seu último serviço! No bom ou no mal sentido! (Arte da Vitrine: Felipe Massafera)
+</p>
+</div>
+</article>
+<article class="card-post -column">
+<div class="image">
+<a href="https://jovemnerd.com.br/playlist/especial-rpg-cronicas-de-ghanor/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/themes/jovem-nerd-v8/assets/images/rpg-medieval.jpg" alt="RPG Crônicas de Ghanor">
+</a>
+</div>
+<div class="info">
+<a href="https://jovemnerd.com.br/playlist/especial-rpg-cronicas-de-ghanor/" class="cat-item product-nerdcast">2011 - 2012</a>
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/especial-rpg-cronicas-de-ghanor/">
+Medieval
+</a>
+</h3>
+<p class="excerpt">
+Embarque nas desventuras do grupo mais desajustado do mundo do RPG, enquanto eles tentam enganar um rei e um desconfiado duque de que foram bem sucedidos ao resgatar a princesa Irulan. (Arte da Vitrine: Andres Ramos)
+</p>
+</div>
+</article>
+</section>
+<div class="wrapper-sidebar">
+<section class="sidebar">
+<div class="product-description">
+<h3 class="title">O que é o NerdCast?</h3>
+<p class="description">
+O <strong>Nerdcast</strong> completou 10 anos em 2016 com 1 milhão de downloads por episódio e como primeiro lugar de audiência em podcasts no Brasil. Os assuntos são história, ciência, cinema, quadrinhos, literatura, tecnologia, games, RPG… Tudo que um nerd gosta! A conversa é informal, divertida, escrachada e tão doida quanto séria. Quer dizer, tão séria quanto doida!<br /><br />
+Junte-se aos convidados de Alexandre “Jovem Nerd�? Ottoni e Deive “Azaghal�? Pazos e faça parte da roda das discussões mais nerds da internet.<br /><br />
+Toda sexta-feira  •  Duração média: 90 minutos
+</p>
+</div>
+<div id="Position_Sidebar" class="ad">
+<div id='div-gpt-ad-194-330-sidebar_halfpage'></div>
+<script>
+if (screen.width > 900) {
+  googletag.cmd.push(function() {
+
+		var REFRESH_KEY = 'refresh';
+  	var REFRESH_VALUE = 'true';
+
+    googletag.defineSlot('/21803899378/jn_sidebar_halfpage',
+			[[300, 600], [160, 600], [120, 600]],
+			'div-gpt-ad-194-330-sidebar_halfpage')
+			.setTargeting(REFRESH_KEY, REFRESH_VALUE)
+			.addService(googletag.pubads());
+
+		var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30;
+
+		googletag.pubads().addEventListener('impressionViewable', function(event) {
+			var slot = event.slot;
+			if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+				setTimeout(function() {
+					googletag.pubads().refresh([slot]);
+				}, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+			}
+		});
+
+		googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+
+		googletag.display('div-gpt-ad-194-330-sidebar_halfpage');
+  });
+}
+</script>
+</div>
+<h2 class="section-title -border">Playlists</h2>
+<div class="item-block -rowslider-mobile">
+<section class="item">
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/caneca-de-mamicas/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/04/CM_000_caneca_de_cuscuz_giga-760x428.jpg" alt="Caneca de Mamicas">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/caneca-de-mamicas/">
+Caneca de Mamicas </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/speak-english/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2018/09/p05mp2931.jpg" alt="Speak English">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/speak-english/">
+Speak English </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/especial-dia-dos-namorados/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/GIGA_NAMORADOS_01-1-760x428.jpg" alt="Especial Dia dos Namorados">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/especial-dia-dos-namorados/">
+Especial Dia dos Namorados </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/nao-vale-usar-google/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/02/google-block.jpg" alt="Não vale usar Google">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/nao-vale-usar-google/">
+Não vale usar Google </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/generacast/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2020/09/DNA-760x428.jpg" alt="GeneraCast">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/generacast/">
+GeneraCast </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/rpg-call-of-cthulhu/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2020/08/RPG-Call-of-Cthulhu-760x428.png" alt="RPG Call of Cthulhu">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/rpg-call-of-cthulhu/">
+RPG Call of Cthulhu </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/nerdtech/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2020/08/alura3-760x428.jpg" alt="Nerdtech">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/nerdtech/">
+Nerdtech </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/profissao-programador/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2019/09/wallhaven-310460-760x428.png" alt="Profissão: Programador">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/profissao-programador/">
+Profissão: Programador </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/profissoes/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2019/02/julius-752x428.jpg" alt="Profissões">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/profissoes/">
+Profissões </a>
+</h3>
+</div>
+</article>
+<article class="card-post -column">
+<a href="https://jovemnerd.com.br/playlist/nerdcash/" class="image">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2018/09/16161_2_EL-760x400.jpg" alt="NerdCash">
+</a>
+<div class="info">
+<h3 class="title">
+<a href="https://jovemnerd.com.br/playlist/nerdcash/">
+NerdCash </a>
+</h3>
+</div>
+</article>
+</section>
+</div>
+<div class="ad-fixed-block">
+<div class="-fixed-ad">
+<div class="-fixed-ad">
+<div id="Position_Sidebar2" class="ad">
+<div id='div-gpt-ad-78-306-sidebar_halfpage'></div>
+<script>
+if (screen.width > 900) {
+  googletag.cmd.push(function() {
+
+		var REFRESH_KEY = 'refresh';
+  	var REFRESH_VALUE = 'true';
+
+    googletag.defineSlot('/21803899378/jn_sidebar_halfpage',
+			[[300, 600], [160, 600], [120, 600]],
+			'div-gpt-ad-78-306-sidebar_halfpage')
+			.setTargeting(REFRESH_KEY, REFRESH_VALUE)
+			.addService(googletag.pubads());
+
+		var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30;
+
+		googletag.pubads().addEventListener('impressionViewable', function(event) {
+			var slot = event.slot;
+			if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+				setTimeout(function() {
+					googletag.pubads().refresh([slot]);
+				}, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+			}
+		});
+
+		googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+
+		googletag.display('div-gpt-ad-78-306-sidebar_halfpage');
+  });
+}
+</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="main-content">
+<h2 class="section-title -border">Outros episódios</h2>
+<nav class="filter-list">
+<div class="item">
+<select name="theme" class="nerdcast-filter">
+<option value="" selected>Tema</option>
+<option value="animacao">Animação</option>
+<option value="artes-marciais">Artes Marciais</option>
+<option value="audio-drama">Audio Drama</option>
+<option value="ciencias">Ciências</option>
+<option value="cinema">Cinema</option>
+<option value="comportamento">Comportamento</option>
+<option value="cotidiano">Cotidiano</option>
+<option value="dia-dos-namorados">Dia dos Namorados</option>
+<option value="empreendedorismo">Empreendedorismo</option>
+<option value="entrevistas">Entrevistas</option>
+<option value="game-of-thrones">Game of Thrones</option>
+<option value="games">Games</option>
+<option value="gastronomia">Gastronomia</option>
+<option value="história">História</option>
+<option value="história-alternativa">História Alternativa</option>
+<option value="internet">Internet</option>
+<option value="lendas-e-mistérios">Lendas e Mistérios</option>
+<option value="literatura">Literatura</option>
+<option value="lost">Lost</option>
+<option value="mais-populares">Mais Populares</option>
+<option value="melhores-momentos">Melhores Momentos</option>
+<option value="musica">Música</option>
+<option value="nostalgia">Nostalgia</option>
+<option value="politica">Política</option>
+<option value="profissoes">Profissões</option>
+<option value="publicidade">Publicidade</option>
+<option value="quadrinhos">Quadrinhos</option>
+<option value="retrospectiva">Retrospectiva</option>
+<option value="rpg">RPG</option>
+<option value="series">Séries</option>
+<option value="star-wars">Star Wars</option>
+<option value="tecnologia">Tecnologia</option>
+<option value="teoria-da-conspiracao">Teoria da Conspiração</option>
+<option value="terror">Terror</option>
+<option value="trabalho">Trabalho</option>
+<option value="tv">TV</option>
+<option value="viagens">Viagens</option>
+</select>
+</div>
+<div class="item">
+<select name="guest" class="nerdcast-filter">
+<option value="" selected>Convidado</option>
+<option value="adriano-paciello">Adriano Paciello</option>
+<option value="affonso-solano">Affonso Solano</option>
+<option value="afonso-3d">Afonso 3d</option>
+<option value="alan-dubox">Alan Dubox</option>
+<option value="ale-ferreira">Ale Ferreira</option>
+<option value="ale-santos">Ale Santos</option>
+<option value="alek">Alek</option>
+<option value="alessandro-ongaratto">Alessandro Ongaratto</option>
+<option value="alexander-stahlhoefer">Alexander Stahlhoefer</option>
+<option value="alexandre-inagaki">Alexandre Inagaki</option>
+<option value="aline-carvalho">Aline Carvalho</option>
+<option value="aline-diniz">Aline Diniz</option>
+<option value="almondega">Almôndega</option>
+<option value="altay-souza">Altay Souza</option>
+<option value="amanda-atanes-buss">Amanda Atanes Buss</option>
+<option value="amanda-louzada">Amanda Louzada</option>
+<option value="americo-fazio">Américo Fazio</option>
+<option value="amigo-imaginario">Amigo Imaginário</option>
+<option value="ana-arantes">Ana Arantes</option>
+<option value="ana-cecilia-moraes">Ana Cecília Moraes</option>
+<option value="anderson-argentoni">Anderson Argentoni</option>
+<option value="andre-breves">André Breves</option>
+<option value="andre-fatala">André Fatala</option>
+<option value="andre-ferreira">André Ferreira</option>
+<option value="andre-gordirro">André Gordirro</option>
+<option value="andre-souza">André Souza</option>
+<option value="andre-vianco">André Vianco</option>
+<option value="andreza-delgado">Andreza Delgado</option>
+<option value="android">Android</option>
+<option value="antonio-sergio-kimus-braz">Antonio Sérgio Kimus Braz</option>
+<option value="atila">Atila</option>
+<option value="azaghal">Azaghal</option>
+<option value="barbara-gutierrez">Barbara Gutierrez</option>
+<option value="barbara-russell">Barbara Russell</option>
+<option value="baunilha">Baunilha</option>
+<option value="bernardo-warman">Bernardo Warman</option>
+<option value="beto-estrada">Beto Estrada</option>
+<option value="beto-neves">Beto Neves</option>
+<option value="bia-granja">Bia Granja</option>
+<option value="bia-kunze">Bia Kunze</option>
+<option value="bluehand">Bluehand</option>
+<option value="borbs">Borbs</option>
+<option value="bruna-sene">Bruna Sene</option>
+<option value="bruno-carvalho">Bruno Carvalho</option>
+<option value="bruno-gouveia">Bruno Gouveia</option>
+<option value="bruno-gunter">Bruno Gunter</option>
+<option value="bruno-hiago">Bruno Hiago</option>
+<option value="butcher-billy">Butcher Billy</option>
+<option value="caio-gomes">Caio Gomes</option>
+<option value="caio-junqueira-de-brito">Caio Junqueira de Brito</option>
+<option value="camila">Camila</option>
+<option value="camila-sousa">Camila Sousa</option>
+<option value="camilota">Camilota</option>
+<option value="cardoso">Cardoso</option>
+<option value="carlinhos-troll">Carlinhos Troll</option>
+<option value="carlos-candido">Carlos Candido</option>
+<option value="carlos-merigo">Carlos Merigo</option>
+<option value="carlos-voltor">Carlos Voltor</option>
+<option value="carolina-moraes">Carolina Moraes</option>
+<option value="caroline-souza">Caroline Souza</option>
+<option value="caue-moura">Cauê Moura</option>
+<option value="cesar-gaglioni">Cesar Gaglioni</option>
+<option value="cesar-machado">César Machado</option>
+<option value="cibele-fabichak">Cibele Fabichak</option>
+<option value="claudia-chow">Claudia Chow</option>
+<option value="conrado-pesinato">Conrado Pesinato</option>
+<option value="cris-correa">Cris Correa</option>
+<option value="cris-dias">Cris Dias</option>
+<option value="daniel-quot-hp-quot-">Daniel "HP"</option>
+<option value="daniel-jezini">Daniel Jezini</option>
+<option value="daniel-john-furuno">Daniel John Furuno</option>
+<option value="daniella-freixo-de-faria">Daniella Freixo de Faria</option>
+<option value="danilo-muller">Danilo Muller</option>
+<option value="david-preti">David Preti</option>
+<option value="debora-atanes">Débora Atanes</option>
+<option value="debora-otero">Débora Otero</option>
+<option value="delcio-gomes">Delcio Gomes</option>
+<option value="dexter">Dexter</option>
+<option value="diego-kerber">Diego Kerber</option>
+<option value="diego-moreno">Diego Moreno</option>
+<option value="diogo-braga">Diogo Braga</option>
+<option value="douglas-de-lima">Douglas de Lima</option>
+<option value="dubox">Dubox</option>
+<option value="edney-souza">Edney Souza</option>
+<option value="edu-cavalcante">Edu Cavalcante</option>
+<option value="edu-giansante">Edu Giansante</option>
+<option value="eduardo-galanternick">Eduardo Galanternick</option>
+<option value="eduardo-sales">Eduardo Sales</option>
+<option value="eduardo-spohr">Eduardo Spohr</option>
+<option value="el-baramallo">El Baramallo</option>
+<option value="emilio-dantas">Emilio Dantas</option>
+<option value="erick-carvalho">Erick Carvalho</option>
+<option value="ernesto-belote">Ernesto Belote</option>
+<option value="evandro-de-freitas">Evandro de Freitas</option>
+<option value="everaldo-marques">Everaldo Marques</option>
+<option value="fabiano-neme">Fabiano Neme</option>
+<option value="fabio-lugar">Fábio Lugar</option>
+<option value="fabio-porchat">Fábio Porchat</option>
+<option value="fabio-yabu">Fabio Yabu</option>
+<option value="fabricio-carraro">Fabrício Carraro</option>
+<option value="fabrizio-carraro">Fabrizio Carraro</option>
+<option value="fe-castanhari">Fê Castanhari</option>
+<option value="feijao">Feijão</option>
+<option value="fernanda-lehrer">Fernanda Lehrer</option>
+<option value="fernando-reule">Fernando Reule</option>
+<option value="filipe-deschamps">Filipe Deschamps</option>
+<option value="filipe-figueiredo">Filipe Figueiredo</option>
+<option value="flavia-luz">Flavia Luz</option>
+<option value="flavio-augusto">Flávio Augusto</option>
+<option value="flavio-dinao">Flávio Dinão</option>
+<option value="francine-gladulich">Francine Gladulich</option>
+<option value="francisco-yamauti">Francisco Yamauti</option>
+<option value="fred-trajano">Fred Trajano</option>
+<option value="gabriel-avila">Gabriel Avila</option>
+<option value="gabriel-comicholi">Gabriel Comicholi</option>
+<option value="gabriel-cruz">Gabriel Cruz</option>
+<option value="gabriel-dread">Gabriel Dread</option>
+<option value="gabs-ferreira">Gabs Ferreira</option>
+<option value="garcia-junior">Garcia Júnior</option>
+<option value="gaveta">Gaveta</option>
+<option value="ghost">Ghost</option>
+<option value="gica-yabu">Gica Yabu</option>
+<option value="gilmar-lopes">Gilmar Lopes</option>
+<option value="gilsomar-livramento">Gilsomar Livramento</option>
+<option value="gilson-finkelsztain">Gilson Finkelsztain</option>
+<option value="gina-gotthilf">Gina Gotthilf</option>
+<option value="giuseppe-janino">Giuseppe Janino</option>
+<option value="guga-ferrari">Guga Ferrari</option>
+<option value="guga-mafra">Guga Mafra</option>
+<option value="gui-leite">Gui Leite</option>
+<option value="guilherme-briggs">Guilherme Briggs</option>
+<option value="guilherme-camillo">Guilherme Camillo</option>
+ <option value="guilherme-desvaldi">Guilherme Desvaldi</option>
+<option value="guilherme-novaes">Guilherme Novaes</option>
+<option value="guilherme-silveira">Guilherme Silveira</option>
+<option value="guilherme-zaiden">Guilherme Zaiden</option>
+<option value="gustavo-caetano">Gustavo Caetano</option>
+<option value="gustavo-ferrarezi">Gustavo Ferrarezi</option>
+<option value="gustavo-guanabara">Gustavo Guanabara</option>
+<option value="hell">Hell</option>
+<option value="hendel-favarin">Hendel Favarin</option>
+<option value="henrique-granado">Henrique Granado</option>
+<option value="herbert-holdefer">Herbert Holdefer</option>
+<option value="ian-palanowski">Ian Palanowski</option>
+<option value="ian-sbf">Ian SBF</option>
+<option value="ibere">Iberê</option>
+<option value="icaro-de-carvalho">�?caro de Carvalho</option>
+<option value="igor-gosling">Igor Gosling</option>
+<option value="igor-santos">Igor Santos</option>
+<option value="inaldo">Inaldo</option>
+<option value="irado">Irado</option>
+<option value="ivys-urquiza">Ivys Urquiza</option>
+<option value="izzy-nobre">Izzy Nobre</option>
+<option value="jeff-paiva">Jeff Paiva</option>
+<option value="jm-trevisan">JM Trevisan</option>
+<option value="joao-ferreira">João Ferreira</option>
+<option value="joao-paulo-beltrao">João Paulo Beltrão</option>
+<option value="joao-victor-guilherme">João Victor Guilherme</option>
+<option value="jonny-ken">Jonny Ken</option>
+<option value="jp">JP</option>
+<option value="jucival-fernandes">Jucival Fernandes</option>
+<option value="julia-gutnik">Julia Gutnik</option>
+<option value="julia-mendonca">Julia Mendonça</option>
+<option value="juliana-vieira">Juliana Vieira</option>
+<option value="jurandir-filho">Jurandir Filho</option>
+<option value="juzao">Juzão</option>
+<option value="kaka-furlan">Kaká Furlan</option>
+<option value="katiucha-barcelos">Katiucha Barcelos</option>
+<option value="kelly-possebon">Kelly Possebon</option>
+<option value="ken-fujioka">Ken Fujioka</option>
+<option value="lady-lark">Lady Lark</option>
+<option value="leandro-de-checchi">Leandro De Checchi</option>
+<option value="leandro-ibraim">Leandro Ibraim</option>
+<option value="leandro-leite-soares">Leandro Leite Soares</option>
+<option value="leila">Leila</option>
+<option value="leo-bossan">Leo Bossan</option>
+<option value="leo-lopes">Leo Lopes</option>
+<option value="leon-martins">Leon Martins</option>
+<option value="leonel-caldela">Leonel Caldela</option>
+<option value="lierson-mattenhauer">Lierson Mattenhauer</option>
+<option value="lito">Lito</option>
+<option value="load">LOAD</option>
+<option value="loic">Loic</option>
+<option value="lucas-quot-marduk-quot-rampinelli">Lucas "Marduk" Rampinelli</option>
+<option value="lucas-cardoso">Lucas Cardoso</option>
+<option value="lucas-de-carli">Lucas de Carli</option>
+<option value="lucas-radaelli">Lucas Radaelli</option>
+<option value="luciano-inada">Luciano Inada</option>
+<option value="luciano-reis">Luciano Reis</option>
+<option value="luisnei-martini">Luisnei Martini</option>
+<option value="luiza-trajano">Luiza Trajano</option>
+<option value="luizinho-mazzei">Luizinho Mazzei</option>
+<option value="luquinhaz">Luquinhaz</option>
+<option value="lyna">Lyna</option>
+<option value="maestro-billy">Maestro Billy</option>
+<option value="malena">Malena</option>
+<option value="marcela-soares">Marcela Soares</option>
+<option value="marcela-versiani">Marcela Versiani</option>
+<option value="marcelinho">Marcelinho</option>
+<option value="marcelo-alves-mori">Marcelo Alves Mori</option>
+<option value="marcelo-bassoli">Marcelo Bassoli</option>
+<option value="marcelo-forlani">Marcelo Forlani</option>
+<option value="marcelo-missioneiro">Marcelo Missioneiro</option>
+<option value="marcelo-pereira">Marcelo Pereira</option>
+<option value="marcia-jamille">Márcia Jamille</option>
+<option value="marcia-leite">Marcia Leite</option>
+<option value="marco-gomes">Marco Gomes</option>
+<option value="marcos-castro">Marcos Castro</option>
+<option value="marcos-pontes">Marcos Pontes</option>
+<option value="marianna-soter">Marianna Soter</option>
+<option value="marina-freire">Marina Freire</option>
+<option value="marina-val">Marina Val</option>
+<option value="mario-souto">Mario Souto</option>
+<option value="mary-joe">Mary Joe</option>
+<option value="mau-faccio">Mau Faccio</option>
+<option value="mau-maker">Mau Maker</option>
+<option value="mauricio-cid">Mauricio Cid</option>
+<option value="mauricio-linhares">Maurício Linhares</option>
+<option value="mauricio-saldanha">Maurício Saldanha</option>
+<option value="mauricio-taborda">Mauricio Taborda</option>
+<option value="max-valarezo">Max Valarezo</option>
+<option value="meg">Meg</option>
+<option value="michel-arouca">Michel Arouca</option>
+<option value="mila">Mila</option>
+<option value="milhem-cortaz">Milhem Cortaz</option>
+<option value="monark">Monark</option>
+<option value="muniz-neto">Muniz Neto</option>
+<option value="naka-morrison">Naka Morrison</option>
+<option value="natalia-freitas">Natália Freitas</option>
+<option value="nathalia-arcuri">Nathalia Arcuri</option>
+<option value="neide-barros">Neide Barros</option>
+<option value="nelson-machado">Nelson Machado</option>
+<option value="nicholas-kawasaki">Nicholas Kawasaki</option>
+<option value="nick-ellis">Nick Ellis</option>
+<option value="nilce-moretto">Nilce Moretto</option>
+<option value="nuno">Nuno</option>
+<option value="otto-heringer">Otto Heringer</option>
+<option value="paloma">Paloma</option>
+<option value="pamela-lopes">Pamela Lopes</option>
+<option value="pamela-tertuliano">Pamela Tertuliano</option>
+<option value="patife">Patife</option>
+<option value="patricia">Patrícia</option>
+<option value="patricia-mafra">Patrícia Mafra</option>
+<option value="paul-h-paulino">Paul H. Paulino</option>
+<option value="paula-nobre">Paula Nobre</option>
+<option value="paulo-cuenca">Paulo Cuenca</option>
+<option value="paulo-silveira">Paulo Silveira</option>
+<option value="pedro-duarte">Pedro Duarte</option>
+<option value="pedro-paulo-silveira">Pedro Paulo Silveira</option>
+<option value="pedro-sorrentino">Pedro Sorrentino</option>
+<option value="pedro-waengertner">Pedro Waengertner</option>
+<option value="ph-santos">PH Santos</option>
+<option value="pierre-schurmann">Pierre Schurmann</option>
+<option value="pirula">Pirula</option>
+<option value="pollar">Pollar</option>
+<option value="portuguesa">Portuguesa</option>
+<option value="pri-ganiko">Pri Ganiko</option>
+<option value="priscila-gama">Priscila Gama</option>
+<option value="rafael-calsaverini">Rafael Calsaverini</option>
+<option value="rafael-de-pinho">Rafael de Pinho</option>
+<option value="rafael-poggi">Rafael Poggi</option>
+<option value="rafael-silveira">Rafael Silveira</option>
+<option value="raphael-draccon">Raphael Draccon</option>
+<option value="reinaldo-jose-lopes">Reinaldo José Lopes</option>
+<option value="renan-pizii">Renan Pizii</option>
+<option value="renata-moraes-vichi">Renata Moraes Vichi</option>
+<option value="renata-primavera">Renata Primavera</option>
+<option value="renato-hirata">Renato Hirata</option>
+<option value="renoir-dos-reis">Renoir dos Reis</option>
+<option value="rex">Rex</option>
+<option value="ricardo-alexandre">Ricardo Alexandre</option>
+<option value="ricardo-biriba">Ricardo Biriba</option>
+<option value="ricardo-cappra">Ricardo Cappra</option>
+<option value="ricardo-di-lazzaro-filho">Ricardo di Lazzaro Filho</option>
+<option value="rick-chesther">Rick Chesther</option>
+<option value="rita-wu">Rita Wu</option>
+<option value="rita-wuu">Rita Wuu</option>
+<option value="roberta-arcoverde">Roberta Arcoverde</option>
+<option value="roberto-sadovski">Roberto Sadovski</option>
+<option value="robinson-shiba">Robinson Shiba</option>
+<option value="rodrigo-dantas">Rodrigo Dantas</option>
+<option value="rogerio-betti">Rogerio Betti</option>
+<option value="rogerio-bonfim">Rogério Bonfim</option>
+<option value="romero-britto">Romero Britto</option>
+<option value="ronald-kyrmse">Ronald Kyrmse</option>
+<option value="ross">Ross</option>
+<option value="rossana-modolin">Rossana Modolin</option>
+<option value="sandro-magaldi">Sandro Magaldi</option>
+<option value="sarkis-semerdjian">Sarkis Semerdjian</option>
+ <option value="saulo">Saulo</option>
+<option value="schaeppi">Schaeppi</option>
+<option value="sergio-barreto">Sérgio Barreto</option>
+<option value="sergio-cantu">Sérgio Cantu</option>
+<option value="sergio-lopes">Sérgio Lopes</option>
+<option value="sergio-sacani">Sérgio Sacani</option>
+<option value="sidney-magal">Sidney Magal</option>
+<option value="sr-k">Sr.K</option>
+<option value="sra-jovem-nerd">Sra. Jovem Nerd</option>
+<option value="sylvia-anjos">Sylvia Anjos</option>
+<option value="takeshi">Takeshi</option>
+<option value="talita-paschoini">Talita Paschoini</option>
+<option value="talita-ribeiro">Talita Ribeiro</option>
+<option value="tayna-garcia">Tayná Garcia</option>
+<option value="thalita-lefer">Thalita Lefer</option>
+<option value="thiago-bisewski">Thiago Bisewski</option>
+<option value="thiago-fini">Thiago Fini</option>
+<option value="thiago-nigro">Thiago Nigro</option>
+<option value="thiago-romariz">Thiago Romariz</option>
+<option value="tiago-abravanel">Tiago Abravanel</option>
+<option value="tina-menna">Tina Menna</option>
+<option value="tito-ferrara">Tito Ferrara</option>
+<option value="toboco">Toboco</option>
+<option value="tucano">Tucano</option>
+<option value="vinicios-duarte">Vinícios Duarte</option>
+<option value="vinicius-fuzikawa">Vinícius Fuzikawa</option>
+<option value="vinicius-k-max">Vinícius K-Max</option>
+<option value="vinicius-schiavini">Vinícius Schiavini</option>
+<option value="virgilio-virga">Virgílio Virga</option>
+<option value="vitor-pamplona">Vitor Pamplona</option>
+<option value="vivi">Vivi</option>
+<option value="yasodara-cordova">Yasodara Córdova</option>
+<option value="ynae-lopes-dos-santos">Ynaê Lopes dos Santos</option>
+<option value="yuri-fang">Yuri Fang</option>
+<option value="yuri-gitahy">Yuri Gitahy</option>
+<option value="ze-cruz">Zé Cruz</option>
+</select>
+</div>
+<div class="item">
+<select name="category" class="nerdcast-filter">
+<option value="" selected>Categoria</option>
+<option value="papo-de-parceiro">Papo de Parceiro</option>
+<option value="caneca-de-mamicas">Caneca de Mamicas</option>
+<option value="generacast">GeneraCast</option>
+<option value="extra">Extras</option>
+<option value="empreendedor">Empreendedor</option>
+<option value="la-do-bunker">Lá do Bunker</option>
+<option value="nerdcash">NerdCash</option>
+<option value="nerdcast">NerdCast</option>
+<option value="nerdtech">NerdTech</option>
+<option value="speak-english">Speak English</option>
+</select>
+</div>
+</nav>
+<div class="" id="more-podcasts">
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/nerdcash/as-inevitaveis-crises-financeiras-mundiais/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/NC_CASH39-crise-11-setembro-760x428.png" alt="As inevitáveis crises financeiras mundiais">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/nerdcash/as-inevitaveis-crises-financeiras-mundiais/">NerdCash 39</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/nerdcash/as-inevitaveis-crises-financeiras-mundiais/">
+As inevitáveis crises financeiras mundiais </a>
+</h2>
+<time class="postedon">
+42 minutos •
+10 de setembro de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/hollywood-odeia-celular/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/ldb-ep06-capa-site-760x428.jpg" alt="Hollywood odeia celular">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/hollywood-odeia-celular/">Lá do Bunker 06</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/la-do-bunker/hollywood-odeia-celular/">
+Hollywood odeia celular </a>
+</h2>
+<time class="postedon">
+51 minutos •
+6 de setembro de 2021 </time>
+</div>
+</article>
+<div class="ad">
+<div id="Position_Content2">
+<div id='div-gpt-ad-154-249-content_arroba'></div>
+<script>
+googletag.cmd.push(function() {
+
+	let mapping = googletag.sizeMapping()
+		.addSize([1024, 0], [728, 90])
+		.addSize(
+			[0, 0],
+			[
+				[320, 50],
+				[300, 50],
+			]
+		)
+		.build();
+
+	let slot = googletag.defineSlot('/21803899378/jn_content_arroba', [
+		[300, 50],
+		[320, 50],
+	], 'div-gpt-ad-154-249-content_arroba')
+	.defineSizeMapping(mapping)
+	.addService(googletag.pubads());
+
+	googletag.pubads().enableLazyLoad({
+			fetchMarginPercent: 200,
+			renderMarginPercent: 100,
+			mobileScaling: 2.0
+	});
+	googletag.enableServices();
+	googletag.display('div-gpt-ad-154-249-content_arroba');
+});
+</script>
+</div>
+</div>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/quando-o-parto-vira-circo/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/CDM_18_quando_o_parto_vira_circo_giga-760x428.jpg" alt="Quando o parto vira circo">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/quando-o-parto-vira-circo/">Caneca de Mamicas 18</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/quando-o-parto-vira-circo/">
+Quando o parto vira circo </a>
+</h2>
+<time class="postedon">
+1 hora e 56 minutos •
+4 de setembro de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/pra-entender-o-afeganistao/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/NC_793_afeganistao-760x428.png" alt="Pra entender o Afeganistão">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/pra-entender-o-afeganistao/">NerdCast 793</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/pra-entender-o-afeganistao/">
+Pra entender o Afeganistão </a>
+</h2>
+<time class="postedon">
+2 horas e 1 minutos •
+3 de setembro de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/nerdtech/game-dev-por-tras-do-codigo/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/09/NC_TECH67-game-developer-760x428.png" alt="Game DEV: Por trás do código">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/nerdtech/game-dev-por-tras-do-codigo/">NerdTech 67</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/nerdtech/game-dev-por-tras-do-codigo/">
+Game DEV: Por trás do código </a>
+</h2>
+<time class="postedon">
+59 minutos •
+3 de setembro de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/e-o-aranha-hein/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/ldb-ep05-capa-site-760x428.jpg" alt="E o Aranha, hein?">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/e-o-aranha-hein/">Lá do Bunker 05</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/la-do-bunker/e-o-aranha-hein/">
+E o Aranha, hein? </a>
+</h2>
+<time class="postedon">
+50 minutos •
+30 de agosto de 2021 </time>
+</div>
+</article>
+<div class="ad">
+<div id="Position_Content3">
+<div id='div-gpt-ad-47-331-content_arroba'></div>
+<script>
+googletag.cmd.push(function() {
+
+	let mapping = googletag.sizeMapping()
+		.addSize([1024, 0], [728, 90])
+		.addSize(
+			[0, 0],
+			[
+				[320, 50],
+				[300, 50],
+			]
+		)
+		.build();
+
+	let slot = googletag.defineSlot('/21803899378/jn_content_arroba', [
+		[300, 50],
+		[320, 50],
+	], 'div-gpt-ad-47-331-content_arroba')
+	.defineSizeMapping(mapping)
+	.addService(googletag.pubads());
+
+	googletag.pubads().enableLazyLoad({
+			fetchMarginPercent: 200,
+			renderMarginPercent: 100,
+			mobileScaling: 2.0
+	});
+	googletag.enableServices();
+	googletag.display('div-gpt-ad-47-331-content_arroba');
+});
+</script>
+</div>
+</div>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/bdsm-bad-ass-modafoca/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/CDM_17_BDSM_giga-760x428.jpg" alt="BDSM - Bad Ass Modafoca">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/bdsm-bad-ass-modafoca/">Caneca de Mamicas 17</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/bdsm-bad-ass-modafoca/">
+BDSM &#8211; Bad Ass Modafoca </a>
+</h2>
+<time class="postedon">
+1 hora e 20 minutos •
+28 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/habitos-estranhos-e-onde-habitam/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/NC_792_habitos-760x428.png" alt="Hábitos estranhos e onde habitam">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/habitos-estranhos-e-onde-habitam/">NerdCast 792</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/habitos-estranhos-e-onde-habitam/">
+Hábitos estranhos e onde habitam </a>
+</h2>
+<time class="postedon">
+1 hora e 59 minutos •
+27 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/empreendedor/dobrando-a-meta/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/NC_EXE79_metas-760x428.png" alt="Dobrando a meta">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/empreendedor/dobrando-a-meta/">Empreendedor 79</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/empreendedor/dobrando-a-meta/">
+Dobrando a meta </a>
+</h2>
+<time class="postedon">
+33 minutos •
+27 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/temos-que-pegar-eu-sei/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/ldb-ep04-capa-site-760x428.jpg" alt="Temos que pegar eu sei">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/temos-que-pegar-eu-sei/">Lá do Bunker 04</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/la-do-bunker/temos-que-pegar-eu-sei/">
+Temos que pegar eu sei </a>
+</h2>
+<time class="postedon">
+43 minutos •
+23 de agosto de 2021 </time>
+</div>
+</article>
+<div class="ad">
+<div id="Position_Content4">
+<div id='div-gpt-ad-39-367-content_arroba'></div>
+<script>
+googletag.cmd.push(function() {
+
+	let mapping = googletag.sizeMapping()
+		.addSize([1024, 0], [728, 90])
+		.addSize(
+			[0, 0],
+			[
+				[320, 50],
+				[300, 50],
+			]
+		)
+		.build();
+
+	let slot = googletag.defineSlot('/21803899378/jn_content_arroba', [
+		[300, 50],
+		[320, 50],
+	], 'div-gpt-ad-39-367-content_arroba')
+	.defineSizeMapping(mapping)
+	.addService(googletag.pubads());
+
+	googletag.pubads().enableLazyLoad({
+			fetchMarginPercent: 200,
+			renderMarginPercent: 100,
+			mobileScaling: 2.0
+	});
+	googletag.enableServices();
+	googletag.display('div-gpt-ad-39-367-content_arroba');
+});
+</script>
+</div>
+</div>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/quando-o-beijo-e-grego-o-tantrico-desconfia/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/CDM_16_beijo_grego_sexo_tantrico_giga-760x428.jpg" alt="Quando o beijo é grego o tântrico desconfia">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/quando-o-beijo-e-grego-o-tantrico-desconfia/">Caneca de Mamicas 16</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/quando-o-beijo-e-grego-o-tantrico-desconfia/">
+Quando o beijo é grego o tântrico desconfia </a>
+</h2>
+<time class="postedon">
+1 hora e 5 minutos •
+21 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/tenet-entropia-e-cagar-pra-dentro/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/NC_791_tenet-760x428.png" alt="TENET: Entropia é cagar pra dentro!">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/tenet-entropia-e-cagar-pra-dentro/">NerdCast 791</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/tenet-entropia-e-cagar-pra-dentro/">
+TENET: Entropia é cagar pra dentro! </a>
+</h2>
+<time class="postedon">
+1 hora e 53 minutos •
+20 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/speak-english/frases-marcantes-do-cinema/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/NC_SE42_frases-filmes-1-760x428.png" alt="Frases marcantes do cinema">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/speak-english/frases-marcantes-do-cinema/">Speak English 42</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/speak-english/frases-marcantes-do-cinema/">
+Frases marcantes do cinema </a>
+</h2>
+<time class="postedon">
+55 minutos •
+20 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/papo-de-parceiro/o-pior-que-pode-acontecer-e-voce-vender/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/NC_MARKET1_piloto-760x428.png" alt="O pior que pode acontecer é você vender!">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/papo-de-parceiro/o-pior-que-pode-acontecer-e-voce-vender/">Papo de Parceiro 01</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/papo-de-parceiro/o-pior-que-pode-acontecer-e-voce-vender/">
+O pior que pode acontecer é você vender! </a>
+</h2>
+<time class="postedon">
+27 minutos •
+17 de agosto de 2021 </time>
+</div>
+</article>
+<div class="ad">
+<div id="Position_Content5">
+<div id='div-gpt-ad-42-327-content_arroba'></div>
+<script>
+googletag.cmd.push(function() {
+
+	let mapping = googletag.sizeMapping()
+		.addSize([1024, 0], [728, 90])
+		.addSize(
+			[0, 0],
+			[
+				[320, 50],
+				[300, 50],
+			]
+		)
+		.build();
+
+	let slot = googletag.defineSlot('/21803899378/jn_content_arroba', [
+		[300, 50],
+		[320, 50],
+	], 'div-gpt-ad-42-327-content_arroba')
+	.defineSizeMapping(mapping)
+	.addService(googletag.pubads());
+
+	googletag.pubads().enableLazyLoad({
+			fetchMarginPercent: 200,
+			renderMarginPercent: 100,
+			mobileScaling: 2.0
+	});
+	googletag.enableServices();
+	googletag.display('div-gpt-ad-42-327-content_arroba');
+});
+</script>
+</div>
+</div>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/saudacao-a-quinta-serie/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/ldb-ep03-capa-site-760x428.jpg" alt="Saudação à quinta série">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/la-do-bunker/saudacao-a-quinta-serie/">Lá do Bunker 03</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/la-do-bunker/saudacao-a-quinta-serie/">
+Saudação à quinta série </a>
+</h2>
+<time class="postedon">
+42 minutos •
+16 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/zerando-a-vida-como-um-rockstar/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/CDM_15_zerando_a_vida_como_um_rockstar_giga-760x428.jpg" alt="Zerando a vida como um Rockstar">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/zerando-a-vida-como-um-rockstar/">Caneca de Mamicas 15</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/caneca-de-mamicas/zerando-a-vida-como-um-rockstar/">
+Zerando a vida como um Rockstar </a>
+</h2>
+<time class="postedon">
+44 minutos •
+14 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/egiptologia-tutancamon-napoleao-e-durepox-arqueologico/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/NC_785_egiptologia-760x428.png" alt="Egiptologia: Tutancamon, Napoleão e Durepox arqueológico">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/egiptologia-tutancamon-napoleao-e-durepox-arqueologico/">NerdCast 790</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/egiptologia-tutancamon-napoleao-e-durepox-arqueologico/">
+Egiptologia: Tutancamon, Napoleão e Durepox arqueológico </a>
+</h2>
+<time class="postedon">
+1 hora e 40 minutos •
+13 de agosto de 2021 </time>
+</div>
+</article>
+<article class="card-post -rowdesktop">
+<a class="image" href="https://jovemnerd.com.br/nerdcast/nerdcash/o-inevitavel-monstro-da-inflacao/">
+<img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/08/NC_CASH38-inflacao-760x428.png" alt="O inevitável monstro da inflação">
+</a>
+<div class="info">
+<a class="cat-item product-nerdcast" href="https://jovemnerd.com.br/nerdcast/nerdcash/o-inevitavel-monstro-da-inflacao/">NerdCash 38</a>
+<h2 class="title">
+<a href="https://jovemnerd.com.br/nerdcast/nerdcash/o-inevitavel-monstro-da-inflacao/">
+O inevitável monstro da inflação </a>
+</h2>
+<time class="postedon">
+46 minutos •
+13 de agosto de 2021 </time>
+</div>
+</article>
+<div class="ad">
+<div id="Position_Content6">
+<div id='div-gpt-ad-78-337-content_arroba'></div>
+<script>
+googletag.cmd.push(function() {
+
+	let mapping = googletag.sizeMapping()
+		.addSize([1024, 0], [728, 90])
+		.addSize(
+			[0, 0],
+			[
+				[320, 50],
+				[300, 50],
+			]
+		)
+		.build();
+
+	let slot = googletag.defineSlot('/21803899378/jn_content_arroba', [
+		[300, 50],
+		[320, 50],
+	], 'div-gpt-ad-78-337-content_arroba')
+	.defineSizeMapping(mapping)
+	.addService(googletag.pubads());
+
+	googletag.pubads().enableLazyLoad({
+			fetchMarginPercent: 200,
+			renderMarginPercent: 100,
+			mobileScaling: 2.0
+	});
+	googletag.enableServices();
+	googletag.display('div-gpt-ad-78-337-content_arroba');
+});
+</script>
+</div>
+</div>
+</div>
+<div class="loadmore-block">
+<button id="show-more-podcasts" class="load-more button-default -primary" data-load-container-name="more-podcasts" data-news-type="nerdcast" data-current-page="1">Carregar mais</button>
+</div>
+</section> 
+</div>
+<section class="section-nerdstore wrapper">
+<h2 class="section-title -border">Nerdstore</h2>
+<nav class="navigation -rowslider-mobile">
+<a href="https://nerdstore.com.br/categoria/vestuario/camisetas/" target="_blank">Camisetas</a>
+<a href="https://nerdstore.com.br/categoria/livros/" target="_blank">Livros</a>
+<a href="https://nerdstore.com.br/categoria/presentes/" target="_blank">Presentes</a>
+<a href="https://nerdstore.com.br/categoria/vestuario/" target="_blank">Vestuário</a>
+<a href="https://bit.ly/3fHhvRE" target="_blank">Máscaras</a>
+<a href="https://nerdstore.com.br/categoria/decoracao/" target="_blank">Decoração</a>
+<a href="https://nerdstore.com.br/categoria/cozinha/" target="_blank">Cozinha</a>
+</nav>
+<section class="nerdstore-highlights row-block -small -rowslider-mobile">
+<div class="item">
+<a class="image" href="https://bit.ly/3wGv2Ai">
+<img width="1000" height="500" src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ozob-01.jpg" class="attachment-small size-small" alt="" srcset="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ozob-01.jpg 1000w, https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ozob-01-760x380.jpg 760w" sizes="(max-width: 1000px) 100vw, 1000px" /> </a>
+<div class="info">
+<span class="title">
+Livro Ozob Volume 1 – Protocolo Molotov </span>
+<strong class="price">
+54,90 </strong>
+<a class="button-default -primary" href="https://bit.ly/3wGv2Ai">Comprar</a>
+</div>
+</div>
+<div class="item">
+<a class="image" href="https://bit.ly/3wCykV9">
+<img width="1000" height="500" src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol1-01.jpg" class="attachment-small size-small" alt="" srcset="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol1-01.jpg 1000w, https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol1-01-760x380.jpg 760w" sizes="(max-width: 1000px) 100vw, 1000px" />  </a>
+<div class="info">
+<span class="title">
+Livro A Lenda de Ruff Ghanor – Volume 01 </span>
+<strong class="price">
+54,90 </strong>
+<a class="button-default -primary" href="https://bit.ly/3wCykV9">Comprar</a>
+</div>
+</div>
+<div class="item">
+<a class="image" href="https://bit.ly/3wAchhV">
+<img width="1000" height="500" src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol2-01.jpg" class="attachment-small size-small" alt="" srcset="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol2-01.jpg 1000w, https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol2-01-760x380.jpg 760w" sizes="(max-width: 1000px) 100vw, 1000px" /> </a>
+<div class="info">
+<span class="title">
+Livro A lenda De Ruff Ghanor – Volume 02 </span>
+<strong class="price">
+54,90 </strong>
+<a class="button-default -primary" href="https://bit.ly/3wAchhV">Comprar</a>
+</div>
+</div>
+<div class="item">
+<a class="image" href="https://bit.ly/3yOY16s">
+<img width="1000" height="500" src="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol3-01.jpg" class="attachment-small size-small" alt="" srcset="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol3-01.jpg 1000w, https://uploads.jovemnerd.com.br/wp-content/uploads/2021/07/vitrine-livro-ruff-ghanor-vol3-01-760x380.jpg 760w" sizes="(max-width: 1000px) 100vw, 1000px" /> </a>
+<div class="info">
+<span class="title">
+Livro A Lenda de Ruff Ghanor – Volume 3 </span>
+<strong class="price">
+54,90 </strong>
+<a class="button-default -primary" href="https://bit.ly/3yOY16s">Comprar</a>
+</div>
+</div>
+</section>
+</section>
+</main>
+</div>
+<input type="hidden" name="postsIdsHighLight" id="postsIdsHighLight" value="[478606,478263,478196,477455]">
+<div id="Position_TopFixed"></div>
+</div>
+<footer id="main-footer" class="main-footer">
+<div class="wrapper">
+<div class="site-map">
+<div class="item">
+<h3 class="title">Sobre</h3>
+<a href="/quem-somos/">Quem somos</a>
+<a href="/fale-conosco/">Fale conosco</a>
+<a href="/premios">Prêmios</a>
+<a href="https://uploads.jovemnerd.com.br/wp-content/uploads/2021/Jovem-Nerd_MK.pdf" target="_blank">Anuncie</a>
+</div>
+<div class="item desktop">
+<h3 class="title">NerdBunker</h3>
+<a href="/bunker/categoria/games">Games</a>
+<a href="/bunker/categoria/cinema">Cinema</a>
+<a href="/bunker/categoria/series-e-tv">Séries e TV</a>
+<a href="/bunker/categoria/tech">Tech</a>
+<a href="/bunker/categoria/hqs-e-livros">HQs e Livros</a>
+</div>
+<div class="item desktop">
+<h3 class="title">Programas</h3>
+<a href="/nerdcast/">NerdCast</a>
+<a href="/nerdoffice/">NerdOffice</a>
+<a href="/nerdplayer/">NerdPlayer</a>
+<a href="/nerdologia/">Nerdologia</a>
+<a href="/sr-k/">Sr. K</a>
+</div>
+<div class="item desktop">
+<h3 class="title">Nerdstore</h3>
+<a href="https://nerdstore.com.br/categoria-produto/camisetas/" target="_blank">Camisetas</a>
+<a href="https://nerdstore.com.br/categoria-produto/livros/" target="_blank">Livros</a>
+<a href="https://nerdstore.com.br/categoria-produto/presentes/" target="_blank">Presentes</a>
+<a href="https://nerdstore.com.br/categoria-produto/vestuario/" target="_blank">Vestuário</a>
+<a href="https://bit.ly/3fHhvRE" target="_blank">Máscaras</a>
+<a href="https://nerdstore.com.br/categoria-produto/decoracao/" target="_blank">Decoração</a>
+<a href="https://nerdstore.com.br/categoria-produto/cozinha/" target="_blank">Cozinha</a>
+</div>
+<div class="item">
+<h3 class="title">Redes Sociais</h3>
+<a href="https://facebook.com/jovemnerd" target="_blank">Facebook</a>
+<a href="https://twitter.com/jovemnerd" target="_blank">Twitter - Jovem Nerd</a>
+<a href="https://twitter.com/azaghal" target="_blank">Twitter - Azaghâl</a>
+<a href="https://www.instagram.com/jovemnerd/" target="_blank">Instagram - Jovem Nerd</a>
+<a href="https://www.instagram.com/azaghal/" target="_blank">Instagram - Azaghâl</a>
+<a href="https://www.youtube.com/user/JovemNerd" target="_blank">YouTube</a>
+</div>
+<div class="item item-app">
+<h3 class="title">Nosso App</h3>
+<a href="http://bit.ly/jn-ios" target="_blank" class="app-links__appstore" aria-label="Aplicativo para iPhone"><span class="screen-reader-text">Aplicativo para iPhone</span><img alt="Baixar na App Store" src="https://uploads.jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/appstore.png"></a>
+<a href="http://bit.ly/jn-android" target="_blank" class="app-links__playstore" aria-label="Aplicativo para Android"><span class="screen-reader-text">Aplicativo para Android</span><img alt="Disponível no Google Play" src="https://uploads.jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/playstore.png"></a>
+</div>
+</div>
+<div class="footer-info">
+<div class="report-link-block">
+<a href="https://pixelwolf.typeform.com/to/oOEiwZ" class="report-link">Reportar Erro</a>
+</div>
+<div class="partners">
+<a class="partner" href="http://pixelwolf.com.br" target="_blank">
+<small>Design e desenvolvimento por</small>
+<img alt="Pixelwolf" src="https://uploads.jovemnerd.com.br/wp-content/themes/jovemnerd/assets/images/pixelwolf.png">
+</a>
+</div>
+<p class="copy">
+© 2002-2020 Jovem Nerd | Pazos, Ottoni & Cia | <a href="/changelog">Versão 8.9.11</a>
+<br>
+Todas as imagens de filmes, séries e etc são marcas registradas dos seus respectivos proprietários.
+</p>
+</div>
+</div>
+</footer>
+</div>
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Ver imagem anterior">
+<span class="screen-reader-text">Ver imagem anterior</span>
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Ver próxima imagem">
+<span class="screen-reader-text">Ver próxima imagem</span>
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div>
+<div id='ad-intervention'>
+
+<div id='div-gpt-ad-1606265023912-0'></div>
+</div>
+<script>
+googletag.cmd.push(function() {
+    if (screen.width > 900) {
+
+		let containerID = 'google_ads_iframe_/21803899378/intervention_0__container__';
+
+        googletag.defineSlot('/21803899378/intervention', [[1024, 768], [1, 1], [1000, 700], [1280, 700]], 'div-gpt-ad-1606265023912-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+		googletag.display('div-gpt-ad-1606265023912-0');
+
+        var intervalSingleIntervention = setInterval(() => {
+			if (document.getElementById(containerID) != null && document.getElementById(containerID).innerHTML.length > 0) {
+				if (document.querySelector('#ad-intervention').style.display == 'none') {
+					clearInterval(intervalSingleIntervention);
+				}else
+					document.querySelector('#ad-intervention').style.display = 'block';
+			}
+		}, 100);
+
+    }
+});
+</script>
+<style>
+#ad-intervention {
+    position: absolute;
+    z-index: 9999999999 !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+#ad-intervention .ad,
+#ad-intervention .widget {
+    background-color: transparent;
+}
+
+#ad-intervention #div-gpt-ad-1606265145464-0,
+#ad-intervention #div-gpt-ad-1606265023912-0 {
+    box-shadow: -5px 0px 0px 100vw #040404ad;
+}
+div#div-gpt-ad-1606265145464-0:before,
+div#div-gpt-ad-1606265023912-0:before {
+    content: "X";
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    background: #3bb4b4;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#ad-intervention #div-gpt-ad-1606265145464-0 iframe[id^="google_ads_iframe_"],
+#ad-intervention #div-gpt-ad-1606265023912-0 iframe[id^="google_ads_iframe_"] {
+    width: 1285px;
+    height: 705px;
+}
+
+#ad-intervention{
+    display: none;
+}
+</style>
+<script>
+window.addEventListener('click', function(){
+    if (document.querySelector('#ad-intervention').style.display != 'none') {
+        document.querySelector('#ad-intervention').style.display = 'none';
+        document.querySelector('#ad-intervention').style.zIndex = 0;
+    }
+});
+
+var st = setTimeout(closeAd , 10000);
+function closeAd() {
+    clearTimeout(st);
+    document.querySelector('#ad-intervention').style.display = 'none';
+    document.querySelector('#ad-intervention').style.zIndex = 0;
+}
+</script>
+<div class="container-banner-cookie">
+<div class="container-text-banner">
+<p class="text-banner-cookie">
+Cookies: a gente guarda estatísticas de visitas para melhorar sua
+experiência de navegação, saiba mais em nossa
+<a href="https://jovemnerd.com.br/politica-de-privacidade/" target="_blank">
+política de privacidade.
+</a>
+</p>
+</div>
+<div class="container-button-banner">
+<p class="text-button-cookie">
+ENTENDI E FECHAR
+</p>
+</div>
+</div>
+<style>
+.container-banner-cookie {
+    display: none;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(79, 79, 79, 0.8);
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    font-family: "Roboto";
+    text-align: justify;
+    z-index: 999999;
+}
+.container-text-banner {
+    width: 50%;
+    justify-content: center;
+    font-weight: 500;
+}
+.text-banner-cookie {
+    color: #ffffff;
+}
+.text-banner-cookie > a {
+    color: #FCD000;
+}
+.text-button-cookie {
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+	.text-banner-cookie {
+		font-size: 9px;
+	}
+}
+</style>
+<script>
+function createCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+
+window.onload = function() {
+	let cookiePolicy = getCookie("message-policy");
+	if (cookiePolicy.length != 0) return;
+
+	let containerMainCookie = "container-banner-cookie";
+	document.getElementsByClassName(containerMainCookie)[0].style.display = "flex";
+	document.getElementsByClassName("text-button-cookie")[0].addEventListener("click", function() {
+		createCookie("message-policy", true, 365);
+		document.getElementsByClassName(containerMainCookie)[0].style.display = "none";
+	});
+};
+</script>
+<section id="podcastPlayerContainer" data-turbolinks-permanent style="display:none">
+<style>
+		.podcast-player > button,
+		.podcast-player > span {
+            color:white;
+        }
+    </style>
+<div class="podcast-player player">
+<div class="podcast-actions">
+<button id="podcastJumpBackwardButton">
+<i class="icon-back"></i>
+</button>
+<button id="podcastResumeAndStopButton">
+<i class="icon-pause"></i>
+</button>
+<button id="podcastJumpForwardButton">
+<i class="icon-forward"></i>
+</button>
+<div class="podcastname-text">
+<span id="podcastNameText"></span>
+</div>
+</div>
+<div class="podcast-bar">
+<div class="podcasttime-current">
+<span id="podcastCurrentTimeText">00:00:00</span>
+</div>
+<div class="progressbar">
+<input class="desktop" id="podcastProgressBarInput" max="9999" value="0" type="range" />
+</div>
+<div class="podcasttime-left desktop">
+<span id="podcastTimeLeftText">00:00:00</span>
+</div>
+
+<i class="icon-volume-down desktop"></i>
+<div class="podcast-volume desktop">
+<input id="podcastVolumeInput" max="100" value="50" type="range" />
+</div>
+<i class="icon-volume-up desktop"></i>
+
+<button id="podcastCloseButton">
+<i class="icon-close"></i>
+</button>
+</div>
+</div>
+<section>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-bdf6bf1731e33c991a4","applicationID":"1314945112","transactionName":"MlRSMRdRV0UAUxZbVwsecQYRWVZYTlEQUVAMR1VIFV9dVQBDFg==","queueTime":0,"applicationTime":404,"atts":"HhNRR19LREs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
