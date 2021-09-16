@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="UrlCatcher:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/UrlCatcher_jar</output-path>
+    <root id="archive" name="UrlCatcher.jar">
+      <element id="module-output" name="UrlCatcher" />
+    </root>
+  </artifact>
+</component>
